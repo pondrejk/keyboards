@@ -81,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Raise
  * ,-----------------------------------------------------------------------------------.
- * |   ;  |   +  |  |   |   š  |   $  |   %  |   &  |   *  |   !  |   í  |  =   | Bksp |
+ * |   ;  |   +  |  |   |   š  |   $  |   %  |   &  |   *  |   !  |   =  |   í  | Bksp |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * | Del  |  ~   |      |      |      |      | Left | Down |  Up  | Left |  '   |  \   |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
@@ -92,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_RAISE] = {
-  {KC_GRV,  KC_1,       S(KC_NUBS), KC_3,    RALT(KC_4), KC_UNDS,    RALT(KC_7), KC_PAST,    S(KC_QUOT),    KC_9,         KC_PEQL,       KC_BSPC},
+  {KC_GRV,  KC_1,       S(KC_NUBS), KC_3,    RALT(KC_4), KC_UNDS,    RALT(KC_7), KC_PAST,    S(KC_QUOT),    KC_PEQL,      KC_9,                KC_BSPC},
   {KC_DEL,  RALT(KC_A), _______,    _______, _______,    _______,    KC_LEFT,    KC_DOWN,    KC_UP,         KC_RGHT,      RALT(KC_QUOT), KC_NUBS},
   {_______, _______,    RALT(KC_3), _______, RALT(KC_V), RALT(KC_H), KC_F12,     RALT(KC_M), RALT(KC_COMM), RALT(KC_DOT), _______,       _______},
   {_______, _______,    _______,    _______, _______,    _______,    _______,    _______,    KC_MNXT,       KC_VOLD,      KC_VOLU,       KC_MPLY}
