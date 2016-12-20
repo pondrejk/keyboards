@@ -46,17 +46,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+-------------+------+------+------+------|
  * | Esc  |   A  |   S  |   D  |   F  |   G  |  /   |   H  |   J  |   K  |   L  | Bksp |
  * |------+------+------+------+------+------+------|------+------+------+------+------|
- * | Shift|   Y  |   X  |   C  |   V  |   B  | Right|   N  |   M  |  ,?  |  .:  |  -_  |
+ * | Shift|   Y  |   X  |   C  |   V  |   B  | -_   |   N  |   M  |  ,?  |  .:  |  Ent |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Numer| Ctrl |  GUI | Alt  |Lower | sp   | sp   | sp   |Raise | Ente | Down |  Up  |
+ * | Numer| Ctrl |  GUI | Alt  |Lower | sp   | sp   | sp   |Raise | Righ | Down |  Up  |
  * `-----------------------------------------------------------------------------------'
  */
 
 [_QWERTY] = {
   {KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,   S(KC_SCLN), KC_Y,    KC_U,    KC_I,    KC_O,    KC_P },
   {KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,   KC_LCBR,    KC_H,    KC_J,    KC_K,    KC_L,    KC_BSPC },
-  {KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,   KC_RGHT,    KC_N,    KC_M,    KC_COMM, KC_DOT,  F(1) },
-  {BACKLIT, KC_LCTL, KC_LGUI, KC_LALT, LOWER,   KC_SPC, KC_SPC,     KC_SPC,  RAISE,   KC_ENT,  KC_DOWN, KC_UP }
+  {KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,   KC_SLSH,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_ENT },
+  {BACKLIT, KC_LCTL, KC_LGUI, KC_LALT, LOWER,   KC_SPC, KC_SPC,     KC_SPC,  RAISE,   KC_RGHT, KC_DOWN, KC_UP }
 },
 
 /* Lower (SK)
@@ -77,6 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {_______, KC_7,    _______, KC_4,    _______, _______,   KC_MPLY,       _______, RALT(KC_F), RALT(KC_G), RALT(KC_B), RALT(KC_N)},
   {_______, _______, _______, _______, _______, _______,   _______,       _______, _______,    KC_MNXT,    KC_PGDN,    KC_PGUP}
 },
+
 
 /* Raise
  * ,-----------------------------------------------------------------------------------.
