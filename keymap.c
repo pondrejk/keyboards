@@ -72,10 +72,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_LOWER] = {
-  {KC_TILD, KC_RBRC, KC_AT,   KC_0,    KC_DLR,  KC_5,      KC_6,    KC_LBRC,    KC_9,       KC_SCLN,    KC_RPRN, RALT(KC_QUOT)},
-  {KC_DEL,  KC_8,    KC_3,    _______, KC_EQL,  S(KC_EQL), _______, KC_RCBR,    KC_PIPE,    KC_2,       KC_DEL , KC_NUBS },
-  {_______, KC_7,    _______, KC_4,    _______, _______,   _______, RALT(KC_F), RALT(KC_G), RALT(KC_B), KC_MPLY, _______,},
-  {_______, _______, _______, _______, _______, _______,   _______, _______,    _______,    KC_PGDN,    KC_PGUP, _______}
+  {KC_TILD, KC_RBRC, KC_AT,   KC_0,    KC_DLR,  KC_5,      KC_6,    KC_LBRC,    KC_9,       KC_SCLN,    KC_RPRN,    RALT(KC_QUOT)},
+  {KC_DEL,  KC_8,    KC_3,    _______, KC_EQL,  S(KC_EQL), _______, KC_RCBR,    KC_PIPE,    KC_2,       KC_DEL,     KC_NUBS},
+  {_______, KC_7,    _______, KC_4,    _______, _______,   _______, RALT(KC_F), RALT(KC_G), RALT(KC_B), RALT(KC_N), _______},
+  {_______, _______, _______, _______, _______, _______,   _______, _______,    _______,    KC_PGDN,    KC_PGUP,    _______}
 },
 
 
@@ -136,7 +136,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {_______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, _______, _______, _______, _______},
   {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______}
 },
-
 
 /* Numeric kayer (Backlit)
  * ,-----------------------------------------------------------------------------------.
