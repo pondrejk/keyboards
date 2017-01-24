@@ -53,10 +53,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_QWERTY] = {
-  {KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,   KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    S(KC_SCLN)},
-  {KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,   KC_H,    KC_J,    KC_K,    KC_L,    KC_BSPC, KC_LCBR},
-  {KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, F(1) },
-  {BACKLIT, KC_LCTL, KC_LGUI, KC_LALT, LOWER,   KC_SPC, KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT }
+  {KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,  KC_T,   KC_Y,    KC_U,  KC_I,    KC_O,    KC_P,    S(KC_SCLN)},
+  {KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,  KC_G,   KC_H,    KC_J,  KC_K,    KC_L,    KC_BSPC, KC_LCBR},
+  {F(2),    KC_Z,    KC_X,    KC_C,    KC_V,  KC_B,   KC_N,    KC_M,  KC_COMM, KC_DOT,  KC_SLSH, F(1) },
+  {BACKLIT, KC_LCTL, KC_LGUI, KC_LALT, LOWER, KC_SPC, KC_SPC,  RAISE, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT }
 },
 
 /* Lower (SK)
@@ -85,17 +85,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+-------------+------+------+------+------|
  * | Del  |  ~   |      |      |      |      | Left | Down |  Up  | Left | Bksp |  \   |
  * |------+------+------+------+------+------+------|------+------+------+------+------|
- * |      |  \   |  #   |      |  @   |  `   |  F12 |   ^  |  <   |   >  | Play |      |
+ * |      |  \   |  #   | C-c  |  @   |  `   |  F12 |   ^  |  <   |   >  | Play |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      | Next | Vol- | Vol+ |      |
  * `-----------------------------------------------------------------------------------'
  */
 
 [_RAISE] = {
-  {KC_GRV,  KC_1,       S(KC_NUBS), KC_3,    RALT(KC_4), KC_UNDS, RALT(KC_7), KC_PAST,    S(KC_QUOT),    KC_PEQL,      KC_9,    RALT(KC_QUOT)},
-  {KC_DEL,  RALT(KC_A), _______,    _______, _______,    _______, KC_LEFT,    KC_DOWN,    KC_UP,         KC_RGHT,      KC_DEL, KC_NUBS},
-  {_______, KC_NUBS,    RALT(KC_3), _______, RALT(KC_V), _______, KC_F12,     RALT(KC_M), RALT(KC_COMM), RALT(KC_DOT), _______, RALT(KC_H)},
-  {_______, _______,    _______,    _______, _______,    _______, _______,    _______,    KC_MNXT,       KC_VOLD,      KC_VOLU, KC_MPLY}
+  {KC_GRV,  KC_1,       S(KC_NUBS), KC_3,       RALT(KC_4), KC_UNDS,    RALT(KC_7), KC_PAST,    S(KC_QUOT),    KC_PEQL,      LCTL(KC_P), RALT(KC_QUOT)},
+  {KC_DEL,  RALT(KC_A), LCTL(KC_S), LCTL(KC_D), LCTL(KC_F), _______,    KC_LEFT,    KC_DOWN,    KC_UP,         KC_RGHT,      KC_DEL,     KC_NUBS},
+  {_______, KC_NUBS,    RALT(KC_3), LCTL(KC_C), RALT(KC_V), RALT(KC_H), KC_F12,     RALT(KC_M), RALT(KC_COMM), RALT(KC_DOT), _______,    RALT(KC_H)},
+  {_______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_MNXT,       KC_VOLD,      KC_VOLU,    KC_MPLY}
 },
 
 /* Plover layer (http://opensteno.org)
@@ -149,7 +149,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_NUMLAYER] = {
-  {_______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, _______,},
+  {_______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, _______},
   {_______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_DLR,  KC_PERC, KC_CIRC, _______, _______},
   {_______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_EXLM, KC_AT,   KC_HASH, _______, _______},
   {_______, _______, _______, _______, _______, _______, _______, _______, KC_RPRN, _______, _______, _______}
@@ -165,8 +165,12 @@ const uint16_t PROGMEM fn_actions[] = { // TODO
   */
 
   // Modifiers
-  [1] = ACTION_MODS_TAP_KEY(KC_RSFT, KC_ENT), // rshift nejde
-  //[2] = ACTION_MODS_TAP_KEY(LOWER, KC_SPC) //mysli si ze lower je ctrl
+  [1] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_ENT), // enter/right shift
+  [2] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_RPRN), // left shift/0
+//[3] = ACTION_MODS_TAP_KEY(MOD_LALT, KC_RCBR), // left alt/(
+//[4] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ENT), // left ctrl/[
+//[5] = ACTION_MODS_TAP_KEY(MOD_BACKLIT, KC_ENT), // backlit(numlayer)/{
+//[2] = ACTION_MODS_TAP_KEY(LOWER, KC_SPC) //mysli si ze lower je ctrl
 };
 
 #ifdef AUDIO_ENABLE
