@@ -81,20 +81,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Raise
  * ,-----------------------------------------------------------------------------------.
- * |   ;  |   +  |  |   |   š  |   $  |   %  |   &  |   *  |   !  |   =  |   í  | '    |
+ * |   ;  |   +  |  |   | C-e  |   $  |   %  |   &  |   *  |   !  |   =  |   í  | '    |
  * |------+------+------+------+------+------+-------------+------+------+------+------|
- * | Del  |  ~   |      |      |      |      | Left | Down |  Up  | Left |   \  | Del  |
+ * | Del  |  C-a |  C-s | C-d  |      |      | Left | Down |  Up  | Left |   \  | Del  |
  * |------+------+------+------+------+------+------|------+------+------+------+------|
- * |      |  \   |  #   | C-c  |  @   |  `   |  F12 |   ^  |  <   |   >  | Play |      |
+ * |      |  ~   |  #   | C-c  |  @   |  `   |  F12 |   ^  |  <   |   >  | Play |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      | Next | Vol- | Vol+ |      |
  * `-----------------------------------------------------------------------------------'
  */
 
 [_RAISE] = {
-  {KC_GRV,  KC_1,       S(KC_NUBS), KC_3,       RALT(KC_4), KC_UNDS,    RALT(KC_7), KC_PAST,    S(KC_QUOT),    KC_PEQL,      LCTL(KC_P), RALT(KC_QUOT)},
-  {KC_DEL,  RALT(KC_A), LCTL(KC_S), LCTL(KC_D), LCTL(KC_F), _______,    KC_LEFT,    KC_DOWN,    KC_UP,         KC_RGHT,      KC_NUBS,    KC_DEL},
-  {_______, KC_NUBS,    RALT(KC_3), LCTL(KC_C), RALT(KC_V), RALT(KC_H), KC_F12,     RALT(KC_M), RALT(KC_COMM), RALT(KC_DOT), _______,    RALT(KC_H)},
+  {KC_GRV,  KC_1,       S(KC_NUBS), LCTL(KC_E), RALT(KC_4), KC_UNDS,    RALT(KC_7), KC_PAST,    S(KC_QUOT),    KC_PEQL,      LCTL(KC_P), RALT(KC_QUOT)},
+  {KC_DEL,  LCTL(KC_A), LCTL(KC_S), LCTL(KC_D), LCTL(KC_F), _______,    KC_LEFT,    KC_DOWN,    KC_UP,         KC_RGHT,      KC_NUBS,    KC_DEL},
+  {_______, RALT(KC_A), RALT(KC_3), LCTL(KC_C), RALT(KC_V), RALT(KC_H), KC_F12,     RALT(KC_M), RALT(KC_COMM), RALT(KC_DOT), _______,    RALT(KC_H)},
   {_______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_MNXT,       KC_VOLD,      KC_VOLU,    KC_MPLY}
 },
 
