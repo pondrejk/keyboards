@@ -166,7 +166,7 @@ const uint16_t PROGMEM fn_actions[] = { // TODO
 
   // Modifiers
   [1] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_ENT), // enter/right shift
-  [2] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_RPRN), // left shift/0
+  [2] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_RBRC), // left shift/(
   [3] = ACTION_MODS_TAP_KEY(BACKLIT, KC_F), // left shift/0
 //[3] = ACTION_MODS_TAP_KEY(MOD_LALT, KC_RCBR), // left alt/(
 //[4] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ENT), // left ctrl/[

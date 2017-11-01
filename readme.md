@@ -4,6 +4,8 @@ Optimized for Slovak keymap
 
 ## Deployment notes (to self)
 
+Official docs at <https://docs.qmk.fm/features.html>
+
 Prerequisites for Fedora 23:
 
 ```
@@ -16,10 +18,10 @@ Clone the repo:
 $ git clone https://github.com/jackhumbert/qmk_firmware.git
 ```
 
-Contents iof this repo should go to **qmk_firmware/keyboards/planck/keymaps/pondrejk/**. Then form **qmk_firmware/keyboards/planck** do:
+Contents iof this repo should go to **qmk_firmware/keyboards/planck/keymaps/pondrejk/**. Then form **qmk_firmware/** do:
 
 ```
-$ sudo make keymap=pondrejk dfu
+$ sudo make planck/rev4:pondrejk:dfu
 ```
 
 ## TODO
