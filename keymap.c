@@ -197,27 +197,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case QWERTY:
       if (record->event.pressed) {
-        #ifdef AUDIO_ENABLE
-          PLAY_NOTE_ARRAY(tone_qwerty, false, 0);
-        #endif
         persistant_default_layer_set(1UL<<_QWERTY);
       }
       return false;
       break;
     case COLEMAK:
       if (record->event.pressed) {
-        #ifdef AUDIO_ENABLE
-          PLAY_NOTE_ARRAY(tone_colemak, false, 0);
-        #endif
         persistant_default_layer_set(1UL<<_COLEMAK);
       }
       return false;
       break;
     case DVORAK:
       if (record->event.pressed) {
-        #ifdef AUDIO_ENABLE
-          PLAY_NOTE_ARRAY(tone_dvorak, false, 0);
-        #endif
         persistant_default_layer_set(1UL<<_DVORAK);
       }
       return false;
@@ -254,10 +245,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     case PLOVER:
       if (record->event.pressed) {
-        #ifdef AUDIO_ENABLE
-          stop_all_notes();
-          PLAY_NOTE_ARRAY(tone_plover, false, 0);
-        #endif
         layer_off(_RAISE);
         layer_off(_LOWER);
         layer_off(_NUMLAYER);
@@ -274,9 +261,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
     case EXT_PLV:
       if (record->event.pressed) {
-        #ifdef AUDIO_ENABLE
-          PLAY_NOTE_ARRAY(tone_plover_gb, false, 0);
-        #endif
         layer_off(_PLOVER);
       }
       return false;
@@ -285,35 +269,3 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-void matrix_init_user(void) {
-    #ifdef AUDIO_ENABLE
-        startup_user();
-    #endif
-}
-
-#ifdef AUDIO_ENABLE
-
-void startup_user()
-{
-    _delay_ms(20); // gets rid of tick
-    PLAY_NOTE_ARRAY(tone_startup, false, 0);
-}
-
-void shutdown_user()
-{
-    PLAY_NOTE_ARRAY(tone_goodbye, false, 0);
-    _delay_ms(150);
-    stop_all_notes();
-}
-
-void music_on_user(void)
-{
-    music_scale_user();
-}
-
-void music_scale_user(void)
-{
-    PLAY_NOTE_ARRAY(music_scale, false, 0);
-}
-
-#endif
