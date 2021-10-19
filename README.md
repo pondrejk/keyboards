@@ -30,4 +30,8 @@ flash
 
 > qmk flash -kb planck/rev3 -km pondrejk
 
-##
+## issues
+
+- qmk flash failing with `.dfu-util: Cannot open DFU device 0483:df11 fedora`
+- solution: put https://github.com/wiieva/dfu-util/blob/master/doc/40-dfuse.rules to /etc/udev/rules.d, add plugdev group and user, reboot
+
