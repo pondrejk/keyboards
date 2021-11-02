@@ -43,17 +43,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Tab  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  |   "  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | Esc  |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  | Bspc |
+ * | Esc  |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   /  | Bspc |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Enter |
+ * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |  ,?  |   .: |  -_  |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Ctrl | Brite| GUI  | Alt  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_preonic_grid(
   KC_GRV,  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_DEL,
-  KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_QUOT,
-  KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_BSPC,
+  KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    S(KC_SCLN),
+  KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_LCBR, KC_BSPC,
   KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,
   KC_LCTL, BACKLIT, KC_LGUI, KC_LALT, LOWER,   KC_SPC,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
@@ -123,22 +123,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Raise
  * ,-----------------------------------------------------------------------------------.
- * |   ;  |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   (  |   )  | Del  |
+ * |   ;  |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   +  |   =  | Del  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |   `  |   1  |   |  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  |   \  |
+ * | Tab  |      |   |  |      |      |      |      |      |      |      |      |   '  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | Del  |  ~   |  F2  |  F3  |  F4  |  F5  |  F6  | Down |  Up  |   [  |   ]  | Bksp |
+ * | Del  |  ~   |      |      |      |      | Left | Down |  Up  | Right|   \  | Bksp |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |  `   |  <   |   >  | Pgdn |      |
+ * |      |      |  #   |      |  @   |   `  |  F12 |  ^   |  <   |   >  | Pgdn |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             |      | Next | Vol- | Vol+ | Play |
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT_preonic_grid(
-  KC_GRV,  S(KC_QUOT),  RALT(KC_V), RALT(KC_3), RALT(KC_4), RALT(KC_5), RALT(KC_6), RALT(KC_7), RALT(KC_8),    KC_9,         KC_0,    KC_DEL,
-  KC_GRV,  KC_1,        S(KC_NUBS), KC_3,       KC_4,       KC_5,       KC_6,       KC_7,       KC_8,          KC_9,         KC_0,    KC_NUBS, 
-  KC_DEL,  RALT(KC_A),  KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,      KC_DOWN,    KC_UP,         KC_LBRC,      KC_RBRC, KC_BSPC,
-  _______, KC_F7,       KC_F8,      KC_F9,      KC_F10,     KC_F11,     KC_F12,     RALT(KC_H), RALT(KC_COMM), RALT(KC_DOT), KC_PGDN, _______,
+  KC_GRV,  S(KC_QUOT),  RALT(KC_V), RALT(KC_3), RALT(KC_4), RALT(KC_5), RALT(KC_6), RALT(KC_7), RALT(KC_8),    KC_1,   KC_PEQL, KC_DEL,
+  KC_TAB,  KC_1,        S(KC_NUBS), KC_3,       KC_4,       KC_5,       KC_6,       KC_7,       KC_8,          KC_9,         KC_0,    RALT(KC_QUOT), 
+  KC_DEL,  RALT(KC_A),  KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_LEFT,    KC_DOWN,    KC_UP,         KC_RIGHT,     KC_NUBS, KC_BSPC,
+  _______, KC_F7,       RALT(KC_3), KC_F9,      RALT(KC_V), RALT(KC_H), KC_F12,     RALT(KC_M), RALT(KC_COMM), RALT(KC_DOT), KC_PGDN, _______,
   _______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY
 ),
 
